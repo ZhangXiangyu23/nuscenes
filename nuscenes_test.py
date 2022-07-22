@@ -1,6 +1,6 @@
 # coding:utf-8
 from nuscenes.nuscenes import NuScenes
-nusc = NuScenes(version='v1.0-mini', dataroot='D:\Dataset', verbose=True)
+nusc = NuScenes(version='v1.0-mini', dataroot='E:\code\\nuscenes\dataset', verbose=True)
 import time
 
 nusc.list_scenes()
@@ -25,10 +25,10 @@ print(my_sample['data'])
 # nusc.render_sample_data(radar_front_data['token'])
 
 # 可视化前方的相机
-# sensor_CAM_FRONT = 'CAM_FRONT'  #这里选择的传感器为前方的毫米波雷达传感器
-# CAM_FRONT_data = nusc.get('sample_data', my_sample['data'][sensor_CAM_FRONT])
-# print(CAM_FRONT_data)
-# nusc.render_sample_data(CAM_FRONT_data['token'])
+sensor_CAM_FRONT = 'CAM_FRONT'  #这里选择的传感器为前方的毫米波雷达传感器
+CAM_FRONT_data = nusc.get('sample_data', my_sample['data'][sensor_CAM_FRONT])
+print(CAM_FRONT_data)
+nusc.render_sample_data(CAM_FRONT_data['token'])
 
 # 可视化顶部激光雷达
 # sensor_LIDAR_TOP = 'LIDAR_TOP'  #这里选择的传感器为前方的毫米波雷达传感器
@@ -54,10 +54,10 @@ print(my_sample['data'])
 # nusc.render_instance(instance_token)
 # time.sleep(3)
 
-print("-" * 50)
-nusc.list_categories()
-
-nusc.list_attributes()
+# print("-" * 50)
+# nusc.list_categories()
+#
+# nusc.list_attributes()
 
 
 # 可视化
@@ -69,19 +69,19 @@ nusc.list_attributes()
 # nusc.render_annotation(anntoken)
 # time.sleep(3)
 
-# 展示传感器信息
-print("-" * 50)
-print(nusc.sensor)
-
-# 展示传感器的校准信息
-sensor_token = nusc.calibrated_sensor[0]
-print(sensor_token)
-
-# 车辆姿态ego_pose信息
-print(nusc.ego_pose[0])
-
-# 日志信息
-print(nusc.log[0])
-
-# 地图信息
-print(nusc.map[0])
+# # 展示传感器信息
+# print("-" * 50)
+# print(nusc.sensor)
+#
+# # 展示传感器的校准信息
+# sensor_token = nusc.calibrated_sensor[0]
+# print(sensor_token)
+#
+# # 车辆姿态ego_pose信息
+# print(nusc.ego_pose[0])
+#
+# # 日志信息
+# print(nusc.log[0])
+#
+# # 地图信息
+# print(nusc.map[0])

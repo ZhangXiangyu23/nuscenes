@@ -80,8 +80,8 @@ nusc.render_sample_data(CAM_FRONT_data['token'])
 # # 车辆姿态ego_pose信息
 # print(nusc.ego_pose[0])
 #
-# # 日志信息
-# print(nusc.log[0])
-#
-# # 地图信息
-# print(nusc.map[0])
+# 日志信息
+print(nusc.log[0])
+
+# 地图信息
+print(nusc.map[0])
